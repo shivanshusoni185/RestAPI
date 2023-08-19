@@ -1,9 +1,9 @@
-from django.urls import path
 from django.contrib import admin
-from testapp.views import EmployeeDetailCBV
+from django.urls import path
+from testapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/<int:id>/', EmployeeDetailCBV.as_view(), name='employee-detail'),
-
+    path('api/', views.EmployeeCRUDCBV.as_view()),
+    # path('api/', views.EmployeeListCBV.as_view()),
 ]
